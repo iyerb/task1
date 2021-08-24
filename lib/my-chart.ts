@@ -34,6 +34,7 @@ pod/mychart-workerappdeploy-deployment-1620e902-66d86fd549-c8pnj   1/1     Runni
 */
 
 const POD_INSTANCES = 1;
+const REDIS_POD_INSTANCES = 2;
 
 export class MyChart extends Chart {
   constructor(scope: Construct, name: string) {
@@ -59,7 +60,7 @@ export class MyChart extends Chart {
       port: REDISPORT
     });
 
-    const redisdeploy = this.createCdk8sDeploymment(this, APPLABEL, "redisdeploy", rediscontainer);
+    const redisdeploy = this.createCdk8sDeploymment(this, APPLABEL, "redisdeploy", rediscontainer, REDIS_POD_INSTANCES);
 
     redisdeploy.expose(REDISPORT, {
       serviceType: kplus.ServiceType.LOAD_BALANCER,
@@ -74,7 +75,7 @@ export class MyChart extends Chart {
     postgrescontainer.addEnv('POSTGRES_USER', kplus.EnvValue.fromValue('postgres'));
     // use a specific key from a secret.
     postgrescontainer.addEnv('POSTGRES_PASSWORD', kplus.EnvValue.fromValue('postgres'));
-    const postgresdeploy = this.createCdk8sDeploymment(this, APPLABEL, "postgresdeploy", postgrescontainer);
+    const postgresdeploy = this.createCdk8sDeploymment(this, APPLABEL, "postgresdeploy", postgrescontainer, POD_INSTANCES);
 
     postgresdeploy.expose(POSTGRESPORT, {
       serviceType: kplus.ServiceType.LOAD_BALANCER,
@@ -85,7 +86,7 @@ export class MyChart extends Chart {
       image: VOTINGAPPIMAGE,
       port: 80
     })
-    const votingappdeploy = this.createCdk8sDeploymment(this, APPLABEL, "votingappdeploy", votingappcontainer);
+    const votingappdeploy = this.createCdk8sDeploymment(this, APPLABEL, "votingappdeploy", votingappcontainer, POD_INSTANCES);
     votingappdeploy.expose(80, {
       serviceType: kplus.ServiceType.LOAD_BALANCER,
     });
@@ -95,7 +96,7 @@ export class MyChart extends Chart {
       image: RESULTAPPIMAGE,
       port: 80
     })
-    const resultappdeploy = this.createCdk8sDeploymment(this, APPLABEL, "resultappdeploy", resultappcontainer);
+    const resultappdeploy = this.createCdk8sDeploymment(this, APPLABEL, "resultappdeploy", resultappcontainer, POD_INSTANCES);
     resultappdeploy.expose(80, {
       serviceType: kplus.ServiceType.LOAD_BALANCER,
     });
@@ -104,19 +105,20 @@ export class MyChart extends Chart {
     const workappcontainer = new kplus.Container({
       image: WORKEAPPIMAGE,
     })
-    const workerappdeploy = this.createCdk8sDeploymment(this, APPLABEL, "workerappdeploy",workappcontainer)
+    const workerappdeploy = this.createCdk8sDeploymment(this, APPLABEL, "workerappdeploy",workappcontainer, POD_INSTANCES)
 
   }
 
   private createCdk8sDeploymment(chart: MyChart,
     label: string,
     deploylabel: string,
-    container: kplus.Container) : kplus.Deployment {
+    container: kplus.Container,
+    replicas: number) : kplus.Deployment {
 
     const deployment = new kplus.Deployment(
       chart,
       deploylabel, {
-        replicas: POD_INSTANCES
+        replicas: replicas
         }
       )
     deployment.addContainer(container);
