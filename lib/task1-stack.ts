@@ -2,6 +2,8 @@ import * as cdk from '@aws-cdk/core';
 import * as eks from '@aws-cdk/aws-eks';
 import * as ec2 from '@aws-cdk/aws-ec2';
 import * as iam from '@aws-cdk/aws-iam';
+import { MyChart } from './my-chart';
+import * as cdk8s from 'cdk8s'
 
 const LAB_KEYPAIR_NM = 'lab-key-pair';
 export class Task1Stack extends cdk.Stack {
@@ -34,6 +36,11 @@ export class Task1Stack extends cdk.Stack {
       mastersRole: clusterAdmin,
       outputClusterName: true
     }) 
+
+    /**
+     * Code to add pods on eks cluster. All containers are defined in MyChart
+     */
+    //jamcluster.addCdk8sChart('my-chart', new MyChart(new cdk8s.App(), 'MyChart'));
     
     new cdk.CfnOutput(this, 'Key Name', { value: LAB_KEYPAIR_NM })
     new cdk.CfnOutput(this, 'eks-cluster-name', { value: jamcluster.clusterName })
