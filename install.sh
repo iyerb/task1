@@ -10,4 +10,3 @@ npm install @aws-cdk/aws-eks cdk8s cdk8s-plus constructs
 npm i
 npm run build
 cdk bootstrap aws://$(aws sts get-caller-identity --query Account --output text)/$(aws configure get region)
-cdk synth
