@@ -40,35 +40,39 @@ checkInstalled "Node" $NodeVersion
 CdkVersion=$(cdk --version | cut -d " " -f 1)
 checkInstalled "CDK" $CdkVersion 
 
-KubeCtlVersion=$(kubectl version --client --short | cut -d " " -f 3)
-checkInstalled "Kubectl" $KubeCtlVersion 
-
-#check If no kubectl found. Install if not found
-if [[ $? -eq 1 ]];
-then
-    echo "Kubectl not found. Installing kubectl..."
-    installKubeCtl
-    wait $!    
-    if [[ $? -eq 0 ]];
+if ! command -v kubectl 
+    then
+    #check If no kubectl found. Install if not found
+        if [[ $? -eq 1 ]];
         then
-            echo "Kubectl sucessfully installed"
-            #verify kubectl installed.  
-            KubeCtlVersion=$(kubectl version --client --short | cut -d " " -f 3)
-            checkInstalled "Kubectl" $KubeCtlVersion   
-        else    
-            echo "Kubectl installation failed...$errtxt"    
-    fi
+            echo "Kubectl not found. Installing kubectl..."
+            installKubeCtl
+            wait $!    
+            if [[ $? -eq 0 ]];
+                then
+                    echo "Kubectl sucessfully installed"
+                    #verify kubectl installed.  
+                    KubeCtlVersion=$(kubectl version --client --short | cut -d " " -f 3)
+                    checkInstalled "Kubectl" $KubeCtlVersion   
+                else    
+                    echo "Kubectl installation failed...$errtxt"    
+            fi
+        fi
+    else
+        echo "Kubectl is installed"
 fi
+
 if [ -n "$NpmVersion" ];
 then
     echo "NPM Exists..installing dependencies..."    
     npm install @aws-cdk/aws-eks cdk8s cdk8s-plus constructs
-    checkInstalled "Npm Dependecies" $NodeVersion
+    checkInstalled "npm Dependencies @aws-cdk/aws-eks cdk8s cdk8s-plus constructs" $NodeVersion
     npm i
-    checkInstalled "Npm Dependecies" $NodeVersion    
+    checkInstalled "npm Dependencies" $NodeVersion    
 else 
     echo "NPM not found, has to be installed to proceed."    
 fi    
+
 if [ -n "$NpmVersion" ];
     then
         echo "Building the project..."    
