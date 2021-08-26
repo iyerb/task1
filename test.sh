@@ -5,9 +5,8 @@ exec 1<>$LOG_FILE
 # Redirect standard error to standard output
 exec 2>&1
 s="STEP"
-errtxt=please check $LOG_FILE for errors
+errtxt="please check $LOG_FILE for errors"
 OSUname=$(uname)
-
 
 checkInstalled(){
     if [[ $? -eq 0 ]];
@@ -17,7 +16,6 @@ checkInstalled(){
             echo "$1 Is not installed"
     fi
 }
-
 
 installKubeCtl(){
     echo "$s 1: Installing Kubectl"
@@ -50,6 +48,7 @@ if [[ $? -eq 1 ]];
 then
     echo "Kubectl not found. Installing kubectl..."
     installKubeCtl
+    wait $!    
     if [[ $? -eq 0 ]];
         then
             echo "Kubectl sucessfully installed"
@@ -74,6 +73,7 @@ if [ -n "$NpmVersion" ];
     then
         echo "Building the project..."    
         npm run build
+        wait $!
         if [[ $? -eq 0 ]];
             then
                 echo "Project build sucessful"    
@@ -82,4 +82,10 @@ if [ -n "$NpmVersion" ];
         fi
     else 
         echo "NPM not found, has to be installed to proceed."    
+fi
+if [[ $? -eq 0 ]];
+then 
+    echo "All Installation sucessful"
+else
+    echo "Installation failed...$errtxt"    
 fi
