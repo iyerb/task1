@@ -1,0 +1,48 @@
+./test.sh: line 8: check: command not found
+Git Is installed, version: 2.20.1
+Npm Is installed, version: 6.14.14
+Node Is installed, version: v14.17.5
+CDK Is installed, version: 1.119.0
+Kubectl Is installed, version: v1.21.3
+NPM Exists..installing dependencies...
+npm WARN @aws-cdk/assert@1.115.0 requires a peer of @aws-cdk/core@1.115.0 but none is installed. You must install peer dependencies yourself.
+npm WARN task1@0.1.0 No repository field.
+npm WARN task1@0.1.0 No license field.
+
++ cdk8s-plus@0.33.0
++ cdk8s@0.33.0
++ @aws-cdk/aws-eks@1.119.0
++ constructs@3.3.133
+updated 17 packages and audited 796 packages in 4.365s
+
+34 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+Npm Dependecies Is installed, version: v14.17.5
+npm WARN @aws-cdk/assert@1.115.0 requires a peer of @aws-cdk/core@1.115.0 but none is installed. You must install peer dependencies yourself.
+npm WARN task1@0.1.0 No repository field.
+npm WARN task1@0.1.0 No license field.
+
+audited 796 packages in 3.744s
+
+34 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+Npm Dependecies Is installed, version: v14.17.5
+Building the project...
+
+> task1@0.1.0 build /Users/iyerb/Documents/Bala/Kubernetes/awsjam/task1
+> tsc
+
+Project build sucessful
+ding the project...
+
+> task1@0.1.0 build /Users/iyerb/Documents/Bala/Kubernetes/awsjam/task1
+> tsc
+
+Project build sucessful
+ then'

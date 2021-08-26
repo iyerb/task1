@@ -6,6 +6,7 @@ import { MyChart } from './my-chart';
 import * as cdk8s from 'cdk8s'
 
 const LAB_KEYPAIR_NM = 'lab-key-pair';
+const CLUSTER_NM = 'jamekscluster'
 export class Task1Stack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
@@ -31,6 +32,7 @@ export class Task1Stack extends cdk.Stack {
     // The code that defines your stack goes here
     const jamcluster = new eks.Cluster(this,'JamEksCluster',{
       version: eks.KubernetesVersion.V1_18,
+      clusterName: CLUSTER_NM,
       vpc: vpc,
       defaultCapacity: 1,
       mastersRole: clusterAdmin,
