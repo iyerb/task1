@@ -2,9 +2,10 @@ Git Is installed, version: 2.20.1
 Npm Is installed, version: 6.14.14
 Node Is installed, version: v14.17.5
 CDK Is installed, version: 1.119.0
-Kubectl Is installed, version: v1.21.3
-NPM Exists..installing dependencies...
-npm WARN @aws-cdk/assert@1.115.0 requires a peer of @aws-cdk/core@1.115.0 but none is installed. You must install peer dependencies yourself.
+./test.sh: line 43: conditional binary operator expected
+./test.sh: line 43: syntax error near `-v'
+./test.sh: line 43: `if [[ ! command -v kubectl ]] ;  '
+none is installed. You must install peer dependencies yourself.
 npm WARN task1@0.1.0 No repository field.
 npm WARN task1@0.1.0 No license field.
 
