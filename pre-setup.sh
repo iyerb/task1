@@ -1,5 +1,7 @@
-#!bin/bash
-LOG_FILE=./output.log
+#!/bin/bash
+LOG_FILE=./error.log
+# Redirect standard error to output
+exec 2>$LOG_FILE
 errtxt="please check $LOG_FILE for errors"
 s="STEP"
 
@@ -14,6 +16,11 @@ install(){
   echo "$s 1: Installation of Kubectl Completed"
 }
 
+installcdk(){
+  echo "$s 2:installing cdk"       
+  npm install cdk  
+  echo "$s 2: NPM Dependencies installed"
+}
 installnpmdependencies(){  
   echo "$s 2:installing npm & cdk dependencies..."       
   npm install @aws-cdk/aws-eks cdk8s cdk8s-plus constructs
@@ -76,7 +83,7 @@ fi
 
 if ! [ -x "$(command -v cdk)" ]; then
   echo 'Error: cdk is not installed.' >&2
-  exit 1
+  installcdk  
 else 
   echo 'cdk Installed'
   CdkVersion=$(cdk --version | cut -d " " -f 1)

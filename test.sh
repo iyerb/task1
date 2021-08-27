@@ -89,3 +89,11 @@ then
 else
     echo "Installation failed...$errtxt"    
 fi
+
+
+npm Installed
+Version: 6.14.12
+node Installed
+Version: v10.24.1
+cdk Installed
+Version: 1.119.0
