@@ -6,21 +6,21 @@ errtxt="please check $LOG_FILE for errors"
 s="STEP"
 
 installcdk(){
-  echo "$s 2:installing cdk"       
+  echo "$s 3:installing cdk"       
   npm install cdk  
-  echo "$s 2: NPM Dependencies installed"
+  echo "$s 3: NPM Dependencies installed"
 }
 installnpmdependencies(){  
-  echo "$s 2:installing npm & cdk dependencies..."       
+  echo "$s 1:installing npm & cdk dependencies..."       
   npm install @aws-cdk/aws-eks cdk8s cdk8s-plus constructs
   npm i
-  echo "$s 2: NPM Dependencies installed"
+  echo "$s 1: NPM Dependencies installed"
 }
 
 buildproject(){
-  echo "$s 3:Building project..."
+  echo "$s 2:Building project..."
   npm run build
-  echo "$s 3:Project build completed!"
+  echo "$s 2:Project build completed!"
 }
 
 cdkbootstrap(){
