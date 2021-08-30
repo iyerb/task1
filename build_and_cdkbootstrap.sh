@@ -5,17 +5,6 @@ exec 2>$LOG_FILE
 errtxt="please check $LOG_FILE for errors"
 s="STEP"
 
-install(){
-  echo "$s 1: Installing Kubectl" 
-  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-  sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
-  chmod +x kubectl
-  mkdir -p ˜/.local/bin/kubectl
-  mv ./kubectl ˜/.local/bin/kubectl
-  export PATH="˜/.local/bin/kubectl:$PATH"
-  echo "$s 1: Installation of Kubectl Completed"
-}
-
 installcdk(){
   echo "$s 2:installing cdk"       
   npm install cdk  
@@ -88,21 +77,6 @@ else
   echo 'cdk Installed'
   CdkVersion=$(cdk --version | cut -d " " -f 1)
   echo "Version: $CdkVersion"
-fi
-
-if ! [ -x "$(command -v tat)" ]; then
-  echo 'Error: kubectl is not installed.' >&2
-  install  
-  if ! [ -x "$(command -v kubectl)" ]; then
-    echo "Error: kubectl not correctly installed." >&2
-    exit 1
-  else
-    echo "kubectl Installed"
-    KubeCtlVersion=$(kubectl version --client --short | cut -d " " -f 3)
-    echo "Version: $KubeCtlVersion"
-  fi
-else 
-  echo 'kubectl Installed'
 fi
 
 if [ -x "$(command -v npm)" ]; then
