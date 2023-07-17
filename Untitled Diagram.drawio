@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-07-17T18:38:21.823Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="ZXHdM3USCvBumJdk73El" version="21.5.2" type="github" pages="8">
+<mxfile host="app.diagrams.net" modified="2023-07-17T18:41:35.371Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="forhOD4Hh13DRJqlzqhC" version="21.5.2" type="github" pages="8">
   <diagram name="LinkFinder-Normal Scenario" id="u3Z_UbdQfIJ3zWZYp1O8">
     <mxGraphModel dx="989" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -1090,7 +1090,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="orReiu43d6xclReHG5o9" name="Page-8">
-    <mxGraphModel dx="1730" dy="920" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="494" dy="263" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1123,7 +1123,7 @@
         <mxCell id="Lthy_hCqEIGSaC-CGKLM-1" value="" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#FF4F8B;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.step_functions;" vertex="1" parent="1">
           <mxGeometry x="361" y="91" width="78" height="78" as="geometry" />
         </mxCell>
-        <mxCell id="Lthy_hCqEIGSaC-CGKLM-3" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/databases/Azure_Database_PostgreSQL_Server_Group.svg;" vertex="1" parent="1">
+        <mxCell id="Lthy_hCqEIGSaC-CGKLM-3" value="Link Finder Database" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/databases/Azure_Database_PostgreSQL_Server_Group.svg;" vertex="1" parent="1">
           <mxGeometry x="634" y="98" width="60" height="68" as="geometry" />
         </mxCell>
         <mxCell id="Lthy_hCqEIGSaC-CGKLM-9" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.lambda_function;fillColor=#F58534;gradientColor=none;" vertex="1" parent="1">
@@ -1284,6 +1284,21 @@
         </mxCell>
         <mxCell id="Lthy_hCqEIGSaC-CGKLM-60" value="Lock Database" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.dynamo_db;fillColor=#2E73B8;gradientColor=none;" vertex="1" parent="1">
           <mxGeometry x="877" y="571" width="72" height="81" as="geometry" />
+        </mxCell>
+        <mxCell id="Lthy_hCqEIGSaC-CGKLM-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Lthy_hCqEIGSaC-CGKLM-68">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="398" y="93" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1075" y="738" />
+              <mxPoint x="1075" y="41" />
+              <mxPoint x="398" y="41" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Lthy_hCqEIGSaC-CGKLM-75" value="Retry Run&lt;br&gt;After All Download Batch compeletes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Lthy_hCqEIGSaC-CGKLM-74">
+          <mxGeometry x="-0.0784" relative="1" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="Lthy_hCqEIGSaC-CGKLM-68" value="" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#FF4F8B;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sqs;" vertex="1" parent="1">
           <mxGeometry x="653" y="707" width="63" height="63" as="geometry" />
