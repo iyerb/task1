@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-07-25T08:43:58.196Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="yqWv8XO6Ukxfq9i8DWvU" version="21.6.3" type="github" pages="9">
+<mxfile host="app.diagrams.net" modified="2023-07-25T09:59:45.728Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="mztIS7LfcfWjQHawuEFe" version="21.6.3" type="github" pages="9">
   <diagram name="LinkFinder-Normal Scenario" id="u3Z_UbdQfIJ3zWZYp1O8">
     <mxGraphModel dx="1240" dy="644" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -1405,7 +1405,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="7SIVQUslhe_QGcyddHyu" name="ML Ops">
-    <mxGraphModel dx="1705" dy="678" grid="0" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1950" dy="805" grid="0" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1536,6 +1536,18 @@
             <mxPoint x="1" as="offset" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="uqmt_1s1voCqD63Lll7I-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="sOQHq4lKl0mt_a7y2Dkx-17" target="sOQHq4lKl0mt_a7y2Dkx-10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="803" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uqmt_1s1voCqD63Lll7I-9" value="Update Status of Object in DB" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="uqmt_1s1voCqD63Lll7I-8">
+          <mxGeometry x="0.1062" y="2" relative="1" as="geometry">
+            <mxPoint x="-42" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="sOQHq4lKl0mt_a7y2Dkx-17" value="DeleteObject" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.lambda_function;fillColor=#F58534;gradientColor=none;" vertex="1" parent="1">
           <mxGeometry x="793" y="552.9300000000001" width="69" height="72" as="geometry" />
         </mxCell>
@@ -1606,11 +1618,14 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="uqmt_1s1voCqD63Lll7I-3" value="FlaggedForDelete" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.lambda_function;fillColor=#F58534;gradientColor=none;" vertex="1" parent="1">
+        <mxCell id="uqmt_1s1voCqD63Lll7I-3" value="DeleteObjectsIterator" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.lambda_function;fillColor=#F58534;gradientColor=none;" vertex="1" parent="1">
           <mxGeometry x="483" y="547.0000000000001" width="69" height="72" as="geometry" />
         </mxCell>
-        <mxCell id="uqmt_1s1voCqD63Lll7I-6" value="1 - Lamda is triggered by Event Bridge based on a schedule&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;&quot;&gt;2. The lambda code queries the S3 bucket and creates and inventory of objects that are up for deletion&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;&quot;&gt;3. For each object the TriggerJobs lambda sends messages into SQS queue with object details&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;&quot;&gt;4. The FlaggedForDelete lambda gets triggered based on the messages in queue&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;&quot;&gt;5. Each queue message is processed by a lambda instance to send a slack flag for delete event notification&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;&quot;&gt;6. The Audit Database is updated with the flagged for delete flag for each object. with a timestamp&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;&quot;&gt;7. The DyanamoDB streams can be used to trigger a lambda for objects&amp;nbsp;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="866" y="171" width="549" height="144" as="geometry" />
+        <mxCell id="uqmt_1s1voCqD63Lll7I-6" value="1 - Lamda is triggered by Event Bridge based on a schedule&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;&quot;&gt;2. The lambda code queries the S3 bucket and creates and inventory of objects that are up for deletion&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;&quot;&gt;3. For each object the TriggerJobs lambda sends messages into SQS queue with object details&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;&quot;&gt;4. The FlaggedForDelete lambda gets triggered based on the messages in queue&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;&quot;&gt;5. Each queue message is processed by a lambda instance to send a slack flag for delete event notification&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;&quot;&gt;6. The Audit Database is updated with the flagged for delete flag for each object. with a timestamp&lt;/span&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;&quot;&gt;7. The DeleteObjectsIterator will be executed per day at a scheduled time to get a list of objects eligible for deletion&lt;br&gt;8. The DeleteObjectsIterator sends these list to an SQS queue as a batch of n-items. The n-DeleteObjects instances gets invoked once the messages are in the queue.&lt;br&gt;9. DeleteObjects deletes the S3 object updates the dynamoDB audit table with flag as deleted.&lt;br&gt;10. DeleteObjects then sends a Notification message on the Slack channel that the object was deleted. Based on the success of #9 above.&amp;nbsp;&lt;br&gt;&lt;font color=&quot;#cc0000&quot;&gt;9-a) In case the object fails deletion. the lambda pushes the message back to the Queue for a retry. No delete notification is sent.&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#cc0000&quot;&gt;9-b) In case the object fails deletion after 3 subsequent tries. The message is sent to a DLQ configured.&lt;/font&gt;&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="856" y="170" width="549" height="282" as="geometry" />
+        </mxCell>
+        <mxCell id="uqmt_1s1voCqD63Lll7I-10" value="11" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FFFF99;" vertex="1" parent="1">
+          <mxGeometry x="590" y="318" width="30" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
