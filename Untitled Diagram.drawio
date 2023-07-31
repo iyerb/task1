@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-07-31T02:33:18.302Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="VF-0oi1jYQU5eOQM-Jwv" version="21.6.3" type="github" pages="9">
+<mxfile host="app.diagrams.net" modified="2023-07-31T02:45:58.171Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="7HdalO1onOHKN9n3q1iM" version="21.6.3" type="github" pages="9">
   <diagram name="LinkFinder-Normal Scenario" id="u3Z_UbdQfIJ3zWZYp1O8">
     <mxGraphModel dx="1240" dy="644" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -1381,7 +1381,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="7SIVQUslhe_QGcyddHyu" name="ML Ops">
-    <mxGraphModel dx="1145" dy="683" grid="0" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1686" dy="694" grid="0" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1640,7 +1640,12 @@
           <mxGeometry x="297" y="1194" width="78" height="78" as="geometry" />
         </mxCell>
         <mxCell id="bNTZ61LRYH2UO7LCMSqW-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="bNTZ61LRYH2UO7LCMSqW-7" target="bNTZ61LRYH2UO7LCMSqW-3">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="101" y="1061" />
+              <mxPoint x="101" y="974" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="bNTZ61LRYH2UO7LCMSqW-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="bNTZ61LRYH2UO7LCMSqW-7" target="bNTZ61LRYH2UO7LCMSqW-2">
           <mxGeometry relative="1" as="geometry" />
@@ -1657,7 +1662,7 @@
         <mxCell id="bNTZ61LRYH2UO7LCMSqW-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="bNTZ61LRYH2UO7LCMSqW-10" target="bNTZ61LRYH2UO7LCMSqW-15">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="444" y="1076" />
+              <mxPoint x="444" y="1061" />
               <mxPoint x="444" y="927" />
             </Array>
           </mxGeometry>
@@ -1665,7 +1670,7 @@
         <mxCell id="bNTZ61LRYH2UO7LCMSqW-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="bNTZ61LRYH2UO7LCMSqW-10" target="bNTZ61LRYH2UO7LCMSqW-16">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="443" y="1076" />
+              <mxPoint x="443" y="1091" />
               <mxPoint x="443" y="1200" />
             </Array>
           </mxGeometry>
@@ -1673,14 +1678,26 @@
         <mxCell id="bNTZ61LRYH2UO7LCMSqW-10" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.lambda_function;fillColor=#F58534;gradientColor=none;" vertex="1" parent="1">
           <mxGeometry x="301" y="1040" width="69" height="72" as="geometry" />
         </mxCell>
-        <mxCell id="bNTZ61LRYH2UO7LCMSqW-15" value="" style="sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.lifecycle" vertex="1" parent="1">
+        <mxCell id="bNTZ61LRYH2UO7LCMSqW-15" value="S3 Life Cycle Policy" style="sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.lifecycle" vertex="1" parent="1">
           <mxGeometry x="545" y="877" width="100" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="bNTZ61LRYH2UO7LCMSqW-16" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#3F8624;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.s3_batch_operations;" vertex="1" parent="1">
+        <mxCell id="bNTZ61LRYH2UO7LCMSqW-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="bNTZ61LRYH2UO7LCMSqW-16" target="bNTZ61LRYH2UO7LCMSqW-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="bNTZ61LRYH2UO7LCMSqW-16" value="S3 Batch Operation" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#3F8624;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.s3_batch_operations;" vertex="1" parent="1">
           <mxGeometry x="569" y="1161" width="78" height="78" as="geometry" />
         </mxCell>
         <mxCell id="bNTZ61LRYH2UO7LCMSqW-12" value="EventBridge" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#FF4F8B;gradientDirection=north;fillColor=#BC1356;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.eventbridge;" vertex="1" parent="1">
           <mxGeometry x="297" y="891" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="bNTZ61LRYH2UO7LCMSqW-22" value="&lt;p style=&quot;box-sizing: border-box; margin-top: 15px; margin-bottom: 15px; padding-top: 5px; color: rgb(51, 51, 51); font-family: AmazonEmber, &amp;quot;Helvetica Neue&amp;quot;, Helvetica, Arial, sans-serif; font-size: 14px; text-align: start;&quot;&gt;Here is the architecture flow:&lt;/p&gt;&lt;ol style=&quot;box-sizing: border-box; margin: 0px 0px 0px 2px; padding: 0px 0px 0px 20px; color: rgb(51, 51, 51); font-family: AmazonEmber, &amp;quot;Helvetica Neue&amp;quot;, Helvetica, Arial, sans-serif; font-size: 14px; text-align: start;&quot;&gt;&lt;li style=&quot;box-sizing: border-box; margin-bottom: 10px;&quot;&gt;The S3 server access logs capture S3 object requests. These are generated and stored in the target S3 bucket.&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-bottom: 10px;&quot;&gt;An S3 inventory report is generated for the source bucket daily. It is written to the S3 inventory target bucket.&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-bottom: 10px;&quot;&gt;An&amp;nbsp;&lt;a style=&quot;box-sizing: border-box; color: rgb(9, 114, 211); outline: 0px; background-color: transparent; text-underline-offset: 0.4rem;&quot; href=&quot;https://aws.amazon.com/eventbridge/&quot;&gt;Amazon EventBridge&lt;/a&gt;&amp;nbsp;rule is configured that will initiate an&amp;nbsp;&lt;a style=&quot;box-sizing: border-box; color: rgb(9, 114, 211); outline: 0px; background-color: transparent; text-underline-offset: 0.4rem;&quot; href=&quot;https://aws.amazon.com/lambda/&quot;&gt;AWS Lambda&lt;/a&gt;&amp;nbsp;function once a day, or as desired.&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-bottom: 10px;&quot;&gt;The Lambda function initiates an&amp;nbsp;&lt;a style=&quot;box-sizing: border-box; color: rgb(9, 114, 211); outline: 0px; background-color: transparent; text-underline-offset: 0.4rem;&quot; href=&quot;https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops-managing-jobs.html&quot;&gt;S3 Batch Operation&lt;/a&gt;&amp;nbsp;job to tag objects in the source bucket. These must be expired using the following logic:&lt;ul style=&quot;box-sizing: border-box; margin: 0px 0px 0px 2px; padding: 0px 0px 0px 20px; list-style: disc;&quot;&gt;&lt;li style=&quot;box-sizing: border-box; margin-bottom: 10px; margin-top: 10px;&quot;&gt;Capture the&amp;nbsp;&lt;em style=&quot;box-sizing: border-box;&quot;&gt;number of days&lt;/em&gt;&amp;nbsp;(x) configuration from the S3 Lifecycle configuration.&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-bottom: 10px;&quot;&gt;Run an&amp;nbsp;&lt;a style=&quot;box-sizing: border-box; color: rgb(9, 114, 211); outline: 0px; background-color: transparent; text-underline-offset: 0.4rem;&quot; href=&quot;https://aws.amazon.com/athena/&quot;&gt;Amazon Athena&lt;/a&gt;&amp;nbsp;query that will get the list of objects from the S3 inventory report and server access logs. Create a delta list with objects that were created earlier than ‘x’ days, but not accessed during that time.&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-bottom: 10px;&quot;&gt;Write a manifest file with the list of these objects to an S3 bucket.&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-bottom: 10px;&quot;&gt;Create an&amp;nbsp;&lt;a style=&quot;box-sizing: border-box; color: rgb(9, 114, 211); outline: 0px; background-color: transparent; text-underline-offset: 0.4rem;&quot; href=&quot;https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops-create-job.html&quot;&gt;S3 Batch operation job&lt;/a&gt;&amp;nbsp;that will tag all objects in the manifest file with a tag of&amp;nbsp;&lt;em style=&quot;box-sizing: border-box;&quot;&gt;“delete=True”&lt;/em&gt;.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-bottom: 0px;&quot;&gt;The Lifecycle rule on the source S3 bucket will expire all objects that were created prior to ‘x’ days. They will have the tag given via the S3 batch operation of&amp;nbsp;&lt;em style=&quot;box-sizing: border-box;&quot;&gt;“delete=True”&lt;/em&gt;.&lt;/li&gt;&lt;/ol&gt;" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="-241" y="1297" width="909" height="507" as="geometry" />
+        </mxCell>
+        <mxCell id="bNTZ61LRYH2UO7LCMSqW-24" value="Notification" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Slack_colored_svg-128.png" vertex="1" parent="1">
+          <mxGeometry x="793" y="1161" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="bNTZ61LRYH2UO7LCMSqW-26" value="Completion Event" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#B0084D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.event;" vertex="1" parent="1">
+          <mxGeometry x="680" y="1087" width="78" height="78" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
